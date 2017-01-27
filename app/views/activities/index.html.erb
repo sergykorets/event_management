@@ -1,0 +1,10 @@
+<br>
+<br>
+<br>
+<br>
+<% @activities.each do |activity| %>
+	<%= div_for activity do %>
+		<%= activity.user.email %>
+		<%= render "activities/#{activity.trackable_type.underscore}/#{activity.action}", activity: activity %>
+	<% end %>
+<% end %>

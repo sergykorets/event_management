@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: event2_development
+  username: postgres
+  password: 3441
+
+staging:
+  <<: *default
+  database: event2_staging
+  username: postgres
+  password: 3441
+
+production:
+  <<: *default
+  database: event2_production
+  username: postgres
+  password: secret

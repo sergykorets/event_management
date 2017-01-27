@@ -1,0 +1,22 @@
+<br>
+<br>
+<br>
+<br>
+<%= @invite.errors.full_messages.first if @invite.errors.any? %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-body">
+		<%= form_for [@event, @invite], :url => event_invites_path, html: { class: "" } do |f| %>
+		    <div class="form-group">
+		      <%= f.label :recipient %>
+		      <%= f.select(:email, User.all_except(current_user).collect {|p| [ p.email, p.email ] }, {}, { class: "chosen-select form-control" })%>
+		    </div>
+		    <%= f.submit "Send", class: "btn btn-primary" %>
+		<% end %>
+      </div>
+	</div>
+  </div>
+</div>
+
+<%= link_to 'Back', :back %>

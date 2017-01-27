@@ -1,0 +1,27 @@
+<br>
+<br>
+<br>
+<br>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @event.time %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @event.place %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @event.purpose %>
+</p>
+
+<%= image_tag @event.avatar(:thumb) %> | 
+<%= link_to 'Invite', new_event_invite_path(@event)%> |
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Dashboard', event_comments_path(@event) %> |  
+<%= link_to 'Back', events_path %>
